@@ -1,7 +1,29 @@
 doctype html
+mixin item(title, url)
+  li(class='list-item')
+     a(href=url class=path == url ? 'item active' : 'item')=title
+
+
 html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
+    p= path
+    nav
+      ul 
+      
+        +item('Strona Główna', '/')
+        +item('Aktualności', '/news')
+        +item('Quiz', '/quiz')
+        +item('Admin', '/admin')
+
+      
+
     block content
+
+
+
+
+
+
